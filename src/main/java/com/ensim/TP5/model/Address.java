@@ -14,9 +14,16 @@ public class Address {
 	private long id;
 	private Date creation;
 	private String content;
+	private String auteur;
 	
 	
 	
+	public String getAuteur() {
+		return auteur;
+	}
+	public void setAuteur(String auteur) {
+		this.auteur = auteur;
+	}
 	public long getId() {
 		return id;
 	}

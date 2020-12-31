@@ -14,5 +14,13 @@
 
 	</div>
 	<p th:text="'Addresse : ' + ${myAddress} + ' !'" />
+	<p th:text="'Content : ' + ${body} + ' !'" />
+	<p th:text="'Count : ' + ${count} + ' !'" />
+	
+	<ul th:each="prop : ${properties}">
+		<li
+			th:text="'Coordinates : ' + ${prop.X} + ' , ' + ${prop.Y}  ">
+	</ul>
+	
 </body>
 </html>

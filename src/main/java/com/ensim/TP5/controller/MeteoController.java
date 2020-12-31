@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
-import com.ensim.TP5.model.Coordinates;
 import com.ensim.TP5.model.Feature;
 import com.ensim.TP5.model.Features;
 import com.ensim.TP5.model.Geometry;
+import com.ensim.TP5.model.Meteo;
 import com.ensim.TP5.model.Properties;
 
 
@@ -38,12 +38,6 @@ public class MeteoController {
 		Features collection = restTemplate.getForObject(ResourceUrl + myAddress, Features.class);
 		ArrayList<Feature> features= collection.getFeatures();
 		
-		
-		
-		
-		
-		
-		
 		ArrayList<Geometry> geometry = new ArrayList<Geometry>();
 		for(Feature f : features){
 			geometry.add(f.getGeometry());
@@ -55,19 +49,24 @@ public class MeteoController {
 		
 		model.addAttribute("geometry",geometry);
 		
-		
 		//API OpenWeather MAP
 		
+		float lat = geometry.get(0).getCoordinates().get(0);
+		float lon = geometry.get(0).getCoordinates().get(1);
 		
 		String key = "75fc5ee8b7b1b66ca7a543164c52d70d";
 		
 		String Url = "http://api.openweathermap.org/data/2.5/weather?";
 		
-		//ResponseEntity<String> weather = restTemplate.getForEntity(Url +"lat="+X+"&lon="+Y+"&appid="+key, String.class);
-		//String retour = weather.getBody();
+		ResponseEntity<String> weather = restTemplate.getForEntity(Url +"lat="+lat+"&lon="+lon+"&appid="+key, String.class);
+		String retour = weather.getBody();
 		
-		//model.addAttribute("weather",retour);
+		model.addAttribute("weather",retour);
+		Meteo meteo = restTemplate.getForObject(Url +"lat="+lat+"&lon="+lon+"&appid="+key, Meteo.class);
 		
+		
+		model.addAttribute("meteo",meteo);
+
 		
 		return "meteo";
 	}

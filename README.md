@@ -36,3 +36,8 @@ La différence étant que l'entité addresse s'affiche dans la barre d'outils.
 ***Etape 20 : Résultat de la requête***
 
 On constate le résultat de la requête de selection, ie: les données ajoutés au fichier data.sql
+
+
+***Etape 30 : Ajout de Bootstrap***
+
+L'ajout de Bootstrap a été fait en ajoutant les dépendances de bootstrap et jQuery sur le Pom.xml, puis l'ajout des stylesheet et scripts sur le fragment Header

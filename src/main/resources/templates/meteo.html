@@ -17,9 +17,9 @@
 	<p th:text="'Content : ' + ${body} + ' !'" />
 	<p th:text="'Count : ' + ${count} + ' !'" />
 	
-	<ul th:each="prop : ${properties}">
+	<ul th:each="prop : ${geometry}">
 		<li
-			th:text="'Coordinates : ' + ${prop.X} + ' , ' + ${prop.Y}  ">
+			th:text="'Coordinates : ' + ${prop.coordinates}  ">
 	</ul>
 	
 </body>

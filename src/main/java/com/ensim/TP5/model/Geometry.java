@@ -5,9 +5,11 @@ import java.util.ArrayList;
 
 public class Geometry implements Serializable{
 	private String type;
-	ArrayList<Object> coordinates = new ArrayList<Object>();
+	ArrayList<Float> coordinates;
 
 	// Getter Methods
+
+	
 
 	public String getType() {
 		return type;
@@ -15,8 +17,18 @@ public class Geometry implements Serializable{
 
 	// Setter Methods
 
+	
+
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public ArrayList<Float> getCoordinates() {
+		return coordinates;
+	}
+
+	public void setCoordinates(ArrayList<Float> coordinates) {
+		this.coordinates = coordinates;
 	}
 }
 

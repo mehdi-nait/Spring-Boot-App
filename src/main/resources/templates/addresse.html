@@ -1,34 +1,27 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org/">
+<html>
 <head>
-
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
+<div th:replace="header ::myheader"></div>
 </head>
-
-
 <body>
 	<div th:fragment="myheader">
 
-		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-			
-			<div class="collapse navbar-collapse" id="navbarText">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link" href="greeting">Greetings
-							<span class="sr-only">(current)</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" href="addresses">Addresses</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="addresse">Addresse</a>
-					</li>
-					
-				</ul>
-				
-			</div>
-		</nav>
+		<!-- Required meta tags -->
+
 	</div>
+	<h1>Input an addresse</h1>
+
+	<form action="/meteo" method="post" >
+	
+		<label for="fname">addresse :</label> 
+		<input type="text" id="addr" name="input_addr"><br>
+		<br> <input type="submit" value="Submit">
+		
+	</form>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

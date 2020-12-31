@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org/">
+<html xmlns:th="http://www.thymeleaf.org/"> 
 <head>
-<title>Blog</title>
-<meta http-equiv="Content-Type" content="text/html ; charset= UTF-8" />
-<div th:replace="header ::myheader"></div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
 	margin: 0;
@@ -35,12 +33,19 @@ body {
 }
 </style>
 </head>
-<body>
-	<div th:fragment="myheader">
+
+
+ <body>
+    <div th:fragment="myheader">
       
-	    <!-- Required meta tags -->
+	   
+	<div class="topnav">
+		 
+		 <a href="/greeting?nameGet=ENSIM">Greeting</a> 
+		 <a href="addresses">Addresses</a>
+		 
+	</div>
 	    
     </div>
-	<p th:text="'Bonjour ' + ${nomTemplate} + ' !'" />
-</body>
+ </body>
 </html>
